@@ -9,6 +9,8 @@ TagManager:
   - Pickup50
   - Inventory
   - Pickup
+  - Platform
+  - Trampoline
   layers:
   - Default
   - TransparentFX
