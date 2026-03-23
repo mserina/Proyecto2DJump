@@ -11,6 +11,10 @@ public class PenguinJump : MonoBehaviour
     [Header("Movimiento horizontal")]
     [SerializeField] private float moveSpeed = 6f;        // Velocidad de desplazamiento lateral
 
+    [Header("Efectos de Sonido")] 
+        [SerializeField] private AudioClip jumpSound; 
+        private AudioSource audioSource;
+    
     // ── Referencias internas ─────────────────────────────────────────────────
 
     private Rigidbody2D rb;
@@ -22,6 +26,11 @@ public class PenguinJump : MonoBehaviour
     {
         // Recogemos el RigidBody del jugador
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null) {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
     }
 
     // ── Cada frame: movimiento horizontal ────────────────────────────────────
@@ -66,8 +75,13 @@ public class PenguinJump : MonoBehaviour
         // Reseteamos la velocidad Y antes del impulso para que siempre sea consistente
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
+        
+        if (jumpSound != null) {
+            audioSource.PlayOneShot(jumpSound);
+        }
     }
 
+    
     // ── El pingüino reaparece en el lado contrario al salir por un borde ─────
 
     private void WrapAroundScreen()
