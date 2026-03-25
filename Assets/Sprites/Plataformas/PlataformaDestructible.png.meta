@@ -116,12 +116,12 @@ TextureImporter:
       name: PlataformaDestructible_0
       rect:
         serializedVersion: 2
-        x: 149
-        y: 693
-        width: 909
-        height: 207
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 103
+        y: 1015
+        width: 951
+        height: 230
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.15329696}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -134,11 +134,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PlataformaDestructible_1
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 513
+        width: 1013
+        height: 395
+      alignment: 9
+      pivot: {x: 0.5491988, y: 0.07605769}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78854f48e5b556341817a40c54e77394
+      internalID: -1798529787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 065650e4dd4a1c744aa8cf37106774b4
     internalID: 0
     vertices: []
     indices: 
@@ -149,6 +171,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       PlataformaDestructible_0: 7229176769005308684
+      PlataformaDestructible_1: -1798529787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
