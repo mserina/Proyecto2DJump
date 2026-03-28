@@ -59,6 +59,7 @@
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\RecolectorPuntos\PlayerControllerPointsCollectMejorado.cs" />
     <Compile Include="Assets\Script\CamaraNoRetrocede.cs" />
+    <Compile Include="Assets\BackgroundLoop.cs" />
     <Compile Include="Assets\Script\PenguinJump.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
