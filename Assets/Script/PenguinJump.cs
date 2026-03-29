@@ -5,8 +5,9 @@ public class PenguinJump : MonoBehaviour
     // ── Variables ajustables desde el Inspector ──────────────────────────────
 
     [Header("Salto")]
+    [SerializeField] private float limiteCaida = 6f;
     [SerializeField] private float jumpForce = 12f;       // Fuerza del salto normal
-    [SerializeField] private float trampolineForce = 22f; // Fuerza extra al pisar un trampolín
+    [SerializeField] private float trampolineForce = 22f; // Fuerza extra al pisar un trampolín (plataforma trampolin)
 
     [Header("Movimiento horizontal")]
     [SerializeField] private float moveSpeed = 6f;        // Velocidad de desplazamiento lateral
@@ -45,6 +46,9 @@ public class PenguinJump : MonoBehaviour
 
         // Si sale por un borde, aparece por el contrario
         WrapAroundScreen();
+
+        //Se comprueba si el jugador se ha salido del rango de la camara
+        ComprobarCaida();
     }
 
     // ── Colisión con plataforma: aquí ocurre el rebote ───────────────────────
@@ -99,14 +103,16 @@ public class PenguinJump : MonoBehaviour
 
     // ── Fin de partida si cae fuera de la pantalla ────────────────────────────
 
-    void OnBecameInvisible()
+    private void ComprobarCaida()
     {
-        // Solo finaliza si cae por ABAJO (por debajo de la cámara)
-        if (transform.position.y < Camera.main.transform.position.y)
+        float bordeInferiorCamara = Camera.main.transform.position.y - Camera.main.orthographicSize;
+
+        // Si el jugador cae por debajo del borde inferior de la cámara más el límite → Game Over
+        if (transform.position.y < bordeInferiorCamara - limiteCaida)
         {
             isAlive = false;
             Debug.Log("Game Over");
-            // Aquí llamarías a tu GameManager: GameManager.Instance.GameOver();
+            // GameManager.Instance.GameOver();
         }
     }
 }

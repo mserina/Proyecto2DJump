@@ -1,40 +1,39 @@
 using UnityEngine;
 using Unity.Cinemachine;
 
+// Impide que la cámara baje más de un límite basado en la altura máxima alcanzada
 public class CamaraNoRetrocede : CinemachineExtension
 {
-    // float.MinValue es el número más pequeño posible
-    // así cualquier posición inicial de la cámara ya será mayor que este valor
+    [SerializeField] private Transform jugador;
+    [SerializeField] private float margenAbajo = 3f; // Unidades que puede bajar la cámara
+
+    // Récord de altura. MinValue para que cualquier posición inicial lo sobreescriba
     private float maxY = float.MinValue;
 
-    // Este método lo llama Cinemachine automáticamente en cada paso de su pipeline
-    // vcam    → la cámara virtual que está procesando
-    // stage   → en qué paso del pipeline estamos ahora mismo
-    // state   → el estado actual de la cámara (posición, rotación, etc.)
-    // deltaTime → tiempo desde el último frame
-    protected override void PostPipelineStageCallback(
-        CinemachineVirtualCameraBase vcam,
-        CinemachineCore.Stage stage,
-        ref CameraState state,
-        float deltaTime)
+    
+    // Cinemachine llama a este método en cada paso de su pipeline
+    protected override void PostPipelineStageCallback( CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
-        // Solo nos interesa actuar en el último paso (Finalize)
-        // En los pasos anteriores ignoramos todo y salimos
-        if (stage != CinemachineCore.Stage.Finalize) return;
+        // Solo actuamos cuando la posición es definitiva
+        if (stage != CinemachineCore.Stage.Finalize)
+        {
+            return;
+        }
 
-        // FinalPosition es la posición que Cinemachine ha calculado para este frame
-        // Si es mayor que nuestro máximo guardado, actualizamos el máximo
+        // Actualizamos el récord de altura
         if (state.RawPosition.y > maxY)
+        {
             maxY = state.RawPosition.y;
 
-        // Cogemos la posición calculada por Cinemachine
+        }
+
+     // Cogemos la posición actual de la cámara
         Vector3 pos = state.RawPosition;
-
-        // Sustituimos la Y por nuestro máximo, bloqueando cualquier bajada
-        pos.y = maxY;
-
-        // RawPosition es la posición que Cinemachine usará finalmente
-        // Al asignarla aquí, en Finalize, nadie más la sobreescribirá
+     // Calculamos el límite mínimo de bajada (el mayor de los dos, que es el más restrictivo)
+        float limiteBajo = Mathf.Max(jugador.position.y - margenAbajo, maxY - margenAbajo);
+     // Si la cámara intenta bajar del límite, la clavamos en él
+        pos.y = Mathf.Max(pos.y, limiteBajo);
+     // Aplicamos la posición corregida
         state.RawPosition = pos;
     }
 }
