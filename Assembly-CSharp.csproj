@@ -54,7 +54,9 @@
     <Compile Include="Assets\Script\Inventario\InventoryCount.cs" />
     <Compile Include="Assets\Script\Inventario\PlayerControllerInventoryBasic.cs" />
     <Compile Include="Assets\Script\BackgroundLoop.cs" />
+    <Compile Include="Assets\Script\PowerUp\PlataformaCohete.cs" />
     <Compile Include="Assets\Script\Inventario\GameManagerInventory.cs" />
+    <Compile Include="Assets\Script\PowerUp\Cohete.cs" />
     <Compile Include="Assets\Script\RecolectorPuntos\PlayerControllerPointsCollect.cs" />
     <Compile Include="Assets\Script\Inventario\ItemInventory.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />

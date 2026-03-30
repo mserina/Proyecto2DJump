@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PenguinJump : MonoBehaviour
@@ -18,8 +20,12 @@ public class PenguinJump : MonoBehaviour
      [SerializeField] private AudioClip trampolineSound;
      [SerializeField] private AudioClip destructibleSound; 
     
+     [Header("Cohete Power Up")] 
+     [SerializeField] private float fuerzaCohete = 20f;  // Velocidad de subida
+     [SerializeField] private float duracionCohete = 3f; // Segundos que dura
+     private bool coheteActivo = false;
         
-        
+     
     // ── Referencias internas ─────────────────────────────────────────────────
     
     private Rigidbody2D rb;
@@ -39,6 +45,7 @@ public class PenguinJump : MonoBehaviour
 
     }
 
+    
     // ── Cada frame: movimiento horizontal ────────────────────────────────────
 
     void Update()
@@ -56,6 +63,7 @@ public class PenguinJump : MonoBehaviour
         ComprobarCaida();
     }
 
+    
     // ── Colisión con plataforma: aquí ocurre el rebote ───────────────────────
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -87,6 +95,7 @@ public class PenguinJump : MonoBehaviour
         }
     }
 
+    
     // ── Aplica el impulso hacia arriba ────────────────────────────────────────
 
     private void Bounce(float force)
@@ -126,5 +135,35 @@ public class PenguinJump : MonoBehaviour
             Debug.Log("Game Over");
             // GameManager.Instance.GameOver();
         }
+    }
+    
+
+    // ── Metodo que llama el script del cohete cuando choca con el jugador ────────────────────────────
+    
+    public void ActivarCohete()
+    {
+        if (!coheteActivo)
+            StartCoroutine(VolarConCohete());
+    }
+    
+    
+    // ── Aplica el Power Up del cohete al jugador por un lapso de tiempo ────────────────────────────
+    
+    private IEnumerator VolarConCohete()
+    {
+        coheteActivo = true;
+
+        float tiempoFin = Time.time + duracionCohete;
+        // Time.time → segundos desde que arrancó el juego
+        // tiempoFin → el momento exacto en que debe terminar el cohete
+
+        while (Time.time < tiempoFin)
+        {
+            // Cada frame forzamos la velocidad Y hacia arriba
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaCohete);
+            yield return null; // Pausa hasta el siguiente frame
+        }
+
+        coheteActivo = false; // Al salir del while, el cohete terminó
     }
 }
