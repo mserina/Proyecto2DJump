@@ -153,9 +153,10 @@ public class PenguinJump : MonoBehaviour
     {
         coheteActivo = true;
 
+        GetComponent<Collider2D>().enabled = false;
+        
         float tiempoFin = Time.time + duracionCohete;
         // Time.time → segundos desde que arrancó el juego
-        // tiempoFin → el momento exacto en que debe terminar el cohete
 
         while (Time.time < tiempoFin)
         {
@@ -163,6 +164,8 @@ public class PenguinJump : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, fuerzaCohete);
             yield return null; // Pausa hasta el siguiente frame
         }
+        
+        GetComponent<Collider2D>().enabled = true;
 
         coheteActivo = false; // Al salir del while, el cohete terminó
     }
