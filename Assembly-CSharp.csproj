@@ -53,13 +53,13 @@
     <Compile Include="Assets\Script\Inventario\Item.cs" />
     <Compile Include="Assets\Script\Inventario\InventoryCount.cs" />
     <Compile Include="Assets\Script\Inventario\PlayerControllerInventoryBasic.cs" />
+    <Compile Include="Assets\Script\BackgroundLoop.cs" />
     <Compile Include="Assets\Script\Inventario\GameManagerInventory.cs" />
     <Compile Include="Assets\Script\RecolectorPuntos\PlayerControllerPointsCollect.cs" />
     <Compile Include="Assets\Script\Inventario\ItemInventory.cs" />
     <Compile Include="Assets\Script\GameManager.cs" />
     <Compile Include="Assets\Script\RecolectorPuntos\PlayerControllerPointsCollectMejorado.cs" />
     <Compile Include="Assets\Script\CamaraNoRetrocede.cs" />
-    <Compile Include="Assets\BackgroundLoop.cs" />
     <Compile Include="Assets\Script\PenguinJump.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

@@ -8,24 +8,29 @@ public class PenguinJump : MonoBehaviour
     [SerializeField] private float limiteCaida = 6f;
     [SerializeField] private float jumpForce = 12f;       // Fuerza del salto normal
     [SerializeField] private float trampolineForce = 22f; // Fuerza extra al pisar un trampolín (plataforma trampolin)
-
+    
     [Header("Movimiento horizontal")]
     [SerializeField] private float moveSpeed = 6f;        // Velocidad de desplazamiento lateral
 
     [Header("Efectos de Sonido")] 
-        [SerializeField] private AudioClip jumpSound; 
-        private AudioSource audioSource;
+     private AudioSource audioSource;
+     [SerializeField] private AudioClip jumpSound; 
+     [SerializeField] private AudioClip trampolineSound;
+     [SerializeField] private AudioClip destructibleSound; 
     
+        
+        
     // ── Referencias internas ─────────────────────────────────────────────────
-
+    
     private Rigidbody2D rb;
     private bool isAlive = true;
 
+    
+    
     // ── Inicialización ───────────────────────────────────────────────────────
-
+    
     void Awake()
     {
-        // Recogemos el RigidBody del jugador
         rb = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null) {
@@ -63,12 +68,22 @@ public class PenguinJump : MonoBehaviour
         if (collision.gameObject.CompareTag("Platform"))
         {
             Bounce(jumpForce);
+            audioSource.PlayOneShot(jumpSound);
         }
 
         // Plataforma con trampolín → salto extra
         if (collision.gameObject.CompareTag("Trampoline"))
         {
             Bounce(trampolineForce);
+            audioSource.PlayOneShot(trampolineSound); 
+        }
+        
+        // Plataforma destructible → salta una vez y desaparece
+        if (collision.gameObject.CompareTag("Destructible"))
+        {
+            Bounce(jumpForce);
+            audioSource.PlayOneShot(destructibleSound);
+            Destroy(collision.gameObject);
         }
     }
 
@@ -80,9 +95,6 @@ public class PenguinJump : MonoBehaviour
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f);
         rb.AddForce(Vector2.up * force, ForceMode2D.Impulse);
         
-        if (jumpSound != null) {
-            audioSource.PlayOneShot(jumpSound);
-        }
     }
 
     
