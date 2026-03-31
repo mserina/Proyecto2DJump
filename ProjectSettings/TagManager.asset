@@ -12,6 +12,7 @@ TagManager:
   - Platform
   - Trampoline
   - Destructible
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -214,7 +214,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  probabilidad: 0.2
+  poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
+  probabilidadCohete: 0.15
+  probabilidadHielo: 0.1
+--- !u!1 &93547654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 93547655}
+  m_Layer: 0
+  m_Name: PuntoDeDisparo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &93547655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 93547654}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.3, y: 1.69, z: 0.064664334}
+  m_LocalScale: {x: 2.4001534, y: 2.4001534, z: 2.4001534}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1416268632}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &135000982 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4774164772148513029, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
@@ -238,7 +271,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  probabilidad: 0.2
+  poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
+  probabilidadCohete: 0.15
+  probabilidadHielo: 0.1
 --- !u!1 &245218254
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +993,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  probabilidad: 0.2
+  poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
+  probabilidadCohete: 0.15
+  probabilidadHielo: 0.1
 --- !u!1001 &955686945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1115,21 +1152,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plataforma (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 6554467264948975750, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697585336486355996, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
-      propertyPath: m_LocalScale.x
-      value: -0.33515072
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697585336486355996, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.4660109
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697585336486355996, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.14291571
+    - target: {fileID: 5425982221603867285, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
+      propertyPath: probabilidadHielo
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6697585336486355996, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1174,10 +1199,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4774164772148513029, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1545807559}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
 --- !u!1001 &1196372073
 PrefabInstance:
@@ -1387,36 +1409,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  probabilidad: 0.2
+  poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
+  probabilidadCohete: 0.15
+  probabilidadHielo: 0.1
 --- !u!4 &1416268632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7464845417074435963, guid: 5443c24c681872349b44dc1229b7df60, type: 3}
   m_PrefabInstance: {fileID: 6716279515587927589}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1545807557 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4774164772148513029, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
-  m_PrefabInstance: {fileID: 1099335066}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1545807558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6697585336486355996, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
   m_PrefabInstance: {fileID: 1099335066}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1545807559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545807557}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 404929b09cd158642b987f1a3cabe23c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  probabilidad: 0.2
 --- !u!1 &1597828754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4774164772148513029, guid: 5a64cd9527c157f4085479b48e5a16db, type: 3}
@@ -1440,7 +1445,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  probabilidad: 0.2
+  poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
+  probabilidadCohete: 0.15
+  probabilidadHielo: 0.1
 --- !u!1001 &1722041441
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1536,7 +1543,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  probabilidad: 0.2
+  poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
+  probabilidadCohete: 0.15
+  probabilidadHielo: 0.1
 --- !u!1 &1779961025
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,7 +1794,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  probabilidad: 0.2
+  poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
+  probabilidadCohete: 0.15
+  probabilidadHielo: 0.1
 --- !u!1 &2053462374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,6 +2101,14 @@ PrefabInstance:
       value: 2.97
       objectReference: {fileID: 0}
     - target: {fileID: 6536958057197040425, guid: 5443c24c681872349b44dc1229b7df60, type: 3}
+      propertyPath: puntoDisparo
+      value: 
+      objectReference: {fileID: 93547655}
+    - target: {fileID: 6536958057197040425, guid: 5443c24c681872349b44dc1229b7df60, type: 3}
+      propertyPath: prefabBalaHielo
+      value: 
+      objectReference: {fileID: 5003537343143652978, guid: 1d7116b3ab5e93e4ea90989014999660, type: 3}
+    - target: {fileID: 6536958057197040425, guid: 5443c24c681872349b44dc1229b7df60, type: 3}
       propertyPath: trampolineSound
       value: 
       objectReference: {fileID: 8300000, guid: a22446db428f239409c2f9f3bc6a1052, type: 3}
@@ -2151,7 +2170,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7464845417074435963, guid: 5443c24c681872349b44dc1229b7df60, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 93547655}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5443c24c681872349b44dc1229b7df60, type: 3}
 --- !u!1660057539 &9223372036854775807
