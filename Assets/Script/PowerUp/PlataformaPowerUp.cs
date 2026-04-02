@@ -36,6 +36,7 @@ public class PlataformaPowerUp : MonoBehaviour
             return;
         }
         Vector3 pos = transform.position + Vector3.up * 1f;
-        Instantiate(prefab, pos, Quaternion.identity);
+        GameObject nuevoPowerUp = Instantiate(prefab, pos, Quaternion.identity, transform);
+
     }
 }

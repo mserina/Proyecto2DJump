@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1820701598458813689}
   - component: {fileID: 6554467264948975750}
   - component: {fileID: 5425982221603867285}
+  - component: {fileID: 8520580341049667370}
   m_Layer: 0
   m_Name: Plataforma
   m_TagString: Platform
@@ -120,7 +121,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -149,5 +150,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
   poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
-  probabilidadCohete: 0.15
+  probabilidadCohete: 0.1
   probabilidadHielo: 0.1
+--- !u!251 &8520580341049667370
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4774164772148513029}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1

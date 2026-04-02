@@ -10,20 +10,23 @@ public class PenguinJump : MonoBehaviour
     [SerializeField] private float jumpForce = 12f; // Fuerza del salto normal
     [SerializeField] private float trampolineForce = 22f; // Fuerza extra al pisar un trampolín (plataforma trampolin)
 
+    
     [Header("Movimiento horizontal")] [SerializeField]
     private float moveSpeed = 6f; // Velocidad de desplazamiento lateral
 
+    
     [Header("Efectos de Sonido")] private AudioSource audioSource;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip trampolineSound;
     [SerializeField] private AudioClip destructibleSound;
-    //[SerializeField] private AudioClip disparoHieloSonido;
+    [SerializeField] private AudioClip disparoHieloSonido;
 
 
     [Header("Cohete Power Up")] [SerializeField]
     private float fuerzaCohete = 20f; // Velocidad de subida
     [SerializeField] private float duracionCohete = 3f; // Segundos que dura
     private bool coheteActivo = false;
+    
     
     [Header("Hielo Power Up")]
     [SerializeField] private GameObject prefabBalaHielo; 
@@ -203,6 +206,7 @@ public class PenguinJump : MonoBehaviour
             
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                audioSource.PlayOneShot(disparoHieloSonido);
                 Instantiate(prefabBalaHielo, puntoDisparo.position, Quaternion.identity);
             
                 // Esperamos un poco para que no salgan ráfagas infinitas

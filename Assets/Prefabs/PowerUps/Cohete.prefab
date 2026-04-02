@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.21, y: -0.17, z: 0}
-  m_LocalScale: {x: 0.1406213, y: 0.1406213, z: 0.1406213}
+  m_LocalScale: {x: 0.30312893, y: 0.2527064, z: 0.1406213}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0df614259f70324d8ca0b58b5f3f988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerUpSound: {fileID: 8300000, guid: 7ea45559d144a2a48b573afa8ec85cfa, type: 3}
+  tipoDeEstePowerUp: 0
 --- !u!70 &9031925501595201295
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
