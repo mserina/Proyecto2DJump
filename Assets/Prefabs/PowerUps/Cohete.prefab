@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 878862516918366199}
   - component: {fileID: 6196044349144925368}
-  - component: {fileID: 1955327952711583316}
   - component: {fileID: 9031925501595201295}
+  - component: {fileID: 7182167757183977327}
   m_Layer: 0
   m_Name: Cohete
   m_TagString: Untagged
@@ -89,19 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1955327952711583316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1875186831467343942}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0df614259f70324d8ca0b58b5f3f988, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tipoDeEstePowerUp: 0
 --- !u!70 &9031925501595201295
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,3 +126,15 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 5.0800004, y: 9.720001}
   m_Direction: 0
+--- !u!114 &7182167757183977327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875186831467343942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e66630188fa74c47aec3d1452f23627, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

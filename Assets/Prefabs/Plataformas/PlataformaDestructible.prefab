@@ -79,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -4598695365731947386, guid: fd6b5c26ffc20d84ab38401077416db5, type: 3}
+  m_Sprite: {fileID: -4598695365731947386, guid: c29c54c1aa1afc14d912d8356dcce202, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 9.22, y: 2.17}
+  m_Size: {x: 9.09, y: 2.07}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -129,7 +129,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 9.09, y: 2.07}
-    newSize: {x: 9.22, y: 2.17}
+    newSize: {x: 9.09, y: 2.07}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -149,9 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cohetePrefab: {fileID: 1875186831467343942, guid: c536b63ac01842b4ebbb7321306b7f5c, type: 3}
-  poderHieloPrefab: {fileID: 3917475081017000655, guid: 6b636cdd282332344891629e7143f148, type: 3}
   probabilidadCohete: 0.1
-  probabilidadHielo: 0.1
 --- !u!251 &-8993054536008062441
 PlatformEffector2D:
   m_ObjectHideFlags: 0

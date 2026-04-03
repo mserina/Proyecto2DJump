@@ -6,16 +6,18 @@ public class PenguinJump : MonoBehaviour
 {
     // ── Variables ajustables desde el Inspector ──────────────────────────────
 
-    [Header("Salto")] [SerializeField] private float limiteCaida = 6f;
+    [Header("Salto")] 
+    [SerializeField] private float limiteCaida = 6f;
     [SerializeField] private float jumpForce = 12f; // Fuerza del salto normal
     [SerializeField] private float trampolineForce = 22f; // Fuerza extra al pisar un trampolín (plataforma trampolin)
 
     
-    [Header("Movimiento horizontal")] [SerializeField]
-    private float moveSpeed = 6f; // Velocidad de desplazamiento lateral
+    [Header("Movimiento horizontal")] 
+    [SerializeField] private float moveSpeed = 6f; // Velocidad de desplazamiento lateral
 
     
-    [Header("Efectos de Sonido")] private AudioSource audioSource;
+    [Header("Efectos de Sonido")] 
+    private AudioSource audioSource;
     [SerializeField] private AudioClip jumpSound;
     [SerializeField] private AudioClip trampolineSound;
     [SerializeField] private AudioClip destructibleSound;
@@ -28,14 +30,6 @@ public class PenguinJump : MonoBehaviour
     private bool coheteActivo = false;
     
     
-    [Header("Hielo Power Up")]
-    [SerializeField] private GameObject prefabBalaHielo; 
-    [SerializeField] private Transform puntoDisparo;
-    [SerializeField] private float duracionHielo = 5f;  // Cuánto tiempo puede disparar
-    [SerializeField] private float tiempoEntreDisparos = 0.3f;
-    private bool HieloActivo = false;
-    private bool puedeDisparar = false;
-
 
 
     // ── Referencias internas ─────────────────────────────────────────────────
@@ -146,7 +140,7 @@ public class PenguinJump : MonoBehaviour
         {
             isAlive = false;
             Debug.Log("Game Over");
-            // GameManager.Instance.GameOver();
+            GameManager.Instance.GameOver();
         }
     }
 
@@ -158,12 +152,7 @@ public class PenguinJump : MonoBehaviour
         if (!coheteActivo)
             StartCoroutine(VolarConCohete());
     }
-
-    public void ActivarPoderHielo()
-    {
-        if (!coheteActivo)
-            StartCoroutine(DispararHielo());
-    }
+    
 
 
     // ── Aplica el Power Up del cohete al jugador por un lapso de tiempo ────────────────────────────
@@ -190,33 +179,6 @@ public class PenguinJump : MonoBehaviour
     }
 
     
-    // ── Aplica el Power Up del hielo al jugador por un lapso de tiempo ────────────────────────────
     
-    private IEnumerator DispararHielo()
-    {
-        // Si ya tiene el poder activo, no hacemos nada 
-        if (puedeDisparar) yield break;
-
-        puedeDisparar = true;
-        float tiempoFin = Time.time + duracionHielo; //Establecemos limite de tiempo
-
-        
-        while (Time.time < tiempoFin)
-        {
-            
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                audioSource.PlayOneShot(disparoHieloSonido);
-                Instantiate(prefabBalaHielo, puntoDisparo.position, Quaternion.identity);
-            
-                // Esperamos un poco para que no salgan ráfagas infinitas
-                yield return new WaitForSeconds(tiempoEntreDisparos);
-            }
-        
-            yield return null;
-        }
-
-        puedeDisparar = false;
-    }
 
 }

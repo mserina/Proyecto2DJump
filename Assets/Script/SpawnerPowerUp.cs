@@ -1,14 +1,12 @@
 using UnityEngine;
 
-public class PlataformaPowerUp : MonoBehaviour
+public class SpawnerPowerUp : MonoBehaviour
 {
    [Header("Power Ups")]
-    [SerializeField] private GameObject cohetePrefab;
-    [SerializeField] private GameObject poderHieloPrefab;
+   [SerializeField] private GameObject cohetePrefab;
 
     [Header("Probabilidades")]
     [SerializeField] private float probabilidadCohete = 0.15f;    // 15%
-    [SerializeField] private float probabilidadHielo = 0.10f;     // 10%
 
     
     void Start()
@@ -22,11 +20,6 @@ public class PlataformaPowerUp : MonoBehaviour
             Spawnear(cohetePrefab);
         }
         
-        // Sumamos las posibilidades de ambos power up para que las posibilidades no coincidan y por ende se solapen  
-        else if (random < probabilidadCohete + probabilidadHielo)
-        {
-            Spawnear(poderHieloPrefab);
-        }
     }
     
     private void Spawnear(GameObject prefab)
@@ -39,4 +32,6 @@ public class PlataformaPowerUp : MonoBehaviour
         GameObject nuevoPowerUp = Instantiate(prefab, pos, Quaternion.identity, transform);
 
     }
+    
+    
 }

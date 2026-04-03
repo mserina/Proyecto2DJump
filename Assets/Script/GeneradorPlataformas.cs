@@ -10,7 +10,7 @@ public class GeneradorPlataformas : MonoBehaviour
 
     [Header("Configuración de generación")]
     [SerializeField] private float separacionMinima = 1.5f;   // Distancia mínima entre plataformas
-    [SerializeField] private float separacionMaxima = 2.5f;   // Distancia máxima entre plataformas
+    [SerializeField] private float separacionMaxima = 4f;   // Distancia máxima entre plataformas
     [SerializeField] private float margenX = 3f;              // Rango horizontal donde pueden aparecer
     [SerializeField] private int plataformasIniciales = 10;   // Cuántas generar al inicio
 
@@ -60,9 +60,9 @@ public class GeneradorPlataformas : MonoBehaviour
         float y = alturaUltimaPlataforma + separacionActual;
 
         GameObject prefab = ElegirPrefab();
-        GameObject nueva = Instantiate(prefab, new Vector3(x, y, 0), Quaternion.identity);
+        GameObject nuevaPlataforma = Instantiate(prefab, new Vector3(x, y, 0), Quaternion.identity);
 
-        plataformasActivas.Add(nueva);
+        plataformasActivas.Add(nuevaPlataforma);
         alturaUltimaPlataforma = y;
     }
 
